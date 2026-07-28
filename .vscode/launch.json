@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run DSA",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/dsa.exe",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": true,
+            "stopAtEntry": false,
+            "preLaunchTask": "Build DSA",
+            "MIMode": "gdb"
+        }
+    ]
+}
