@@ -30,36 +30,42 @@ void sortMenu(int arr[], int size)
 {
     int choice;
 
-        cout << "\n----- Sorting Menu -----\n";
-        cout << "1. Selection Sort\n";
-        cout << "2. Quick Sort\n";
-        cout << "3. Merge Sort\n";
-        cout << "4. Back to Main Menu\n";
-        cout << "\nEnter your choice: ";
-        cin >> choice;
+    cout << "\n----- Sorting Menu -----\n";
+    cout << "1. Selection Sort\n";
+    cout << "2. Quick Sort\n";
+    cout << "3. Merge Sort\n";
+    cout << "4. Back to Main Menu\n";
+    cout << "\nEnter your choice: ";
+    cin >> choice;
 
-        switch(choice)
-        {
-            case 1:
-                selectionSort(arr, size);
-                cout << "\nRecords sorted using Selection Sort.\n";
-                break;
-            case 2:
-                quickSort(arr, 0, size - 1);
-                cout << "\nRecords sorted using Quick Sort.\n";
-                break;
-            case 3:
-                mergeSort(arr, 0, size - 1);
-                cout << "\nRecords sorted using Merge Sort.\n";
-                break;
-            case 4:
-                cout << "\nReturning to Main Menu...\n";
-                break;
-            default:
-                cout << "\nInvalid choice! Please try again.\n";
-        }
-    } 
+    switch(choice)
+    {
+        case 1:
+            selectionSort(arr, size);
+            cout << "\nRecords sorted using Selection Sort.\n";
+            displaySortedArray(arr, size);   // <-- Write it here
+            break;
 
+        case 2:
+            quickSort(arr, 0, size - 1);
+            cout << "\nRecords sorted using Quick Sort.\n";
+            displaySortedArray(arr, size);   // <-- Write it here
+            break;
+
+        case 3:
+            mergeSort(arr, 0, size - 1);
+            cout << "\nRecords sorted using Merge Sort.\n";
+            displaySortedArray(arr, size);   // <-- Write it here
+            break;
+
+        case 4:
+            cout << "\nReturning to Main Menu...\n";
+            break;
+
+        default:
+            cout << "\nInvalid choice! Please try again.\n";
+    }
+}
     int partition(int arr[], int low, int high)
     {
         int pivot = arr[high];
@@ -157,3 +163,18 @@ void sortMenu(int arr[], int size)
             merge(arr, left, mid, right);
         }
     }
+
+   void displaySortedArray(int arr[], int size)
+{
+    cout << "\n----- Sorted Records -----\n\n";
+
+    for(int i = 0; i < size; i++)
+    {
+        cout << arr[i] << "\t";
+
+        if((i + 1) % 10 == 0)
+            cout << endl;
+    }
+
+    cout << endl;
+}

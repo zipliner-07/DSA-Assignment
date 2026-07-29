@@ -5,6 +5,7 @@ void sortMenu(int arr[], int size);
 
 
 void selectionSort(int arr[], int size);
+void displaySortedArray(int arr[], int size);
 
 int partition(int arr[], int low, int high);
 void quickSort(int arr[], int low, int high);
